@@ -201,10 +201,7 @@ class Alias(CMFCatalogAware, CMFOrderedBTreeFolderBase, PortalContent, Contained
 
     @getproperty
     def portal_type(self):
-        aliased = self._target
-        if aliased is None:
-            return self._alias_portal_type
-        return aq_inner(aliased).portal_type
+        return self._alias_portal_type
 
     @setproperty
     def portal_type(self, value):
